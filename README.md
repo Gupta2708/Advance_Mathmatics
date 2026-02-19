@@ -21,14 +21,12 @@ The analysis uses **NO₂ (Nitrogen Dioxide)** concentration data from the *Indi
 
 For roll number **102316130**, the transformation is:
 
-\[
-z = x + a_r \sin(b_r x)
-\]
+**z = x + aᵣ sin(bᵣ x)**
 
 Where:
 
-- \( a_r = 0.05 \times (r \bmod 7) = 0.10 \)
-- \( b_r = 0.3 \times (r \bmod 5 + 1) = 0.30 \)
+- aᵣ = 0.05 × (r mod 7) = 0.10  
+- bᵣ = 0.3 × (r mod 5 + 1) = 0.30  
 
 This introduces controlled non-linearity into the dataset.
 
@@ -38,16 +36,14 @@ This introduces controlled non-linearity into the dataset.
 
 The transformed data is modeled using a Gaussian distribution:
 
-\[
-\hat{p}(z) = c \, e^{-\lambda (z-\mu)^2}
-\]
+**p̂(z) = c · e^(−λ (z − μ)²)**
 
 Parameters are estimated using Maximum Likelihood Estimation:
 
-- **μ** → Mean of transformed data  
-- **σ** → Standard deviation  
-- **λ = 1/(2σ²)**  
-- **c = 1/(σ√(2π))**
+- μ → Mean of transformed data  
+- σ → Standard deviation  
+- λ = 1 / (2σ²)  
+- c = 1 / (σ√(2π))  
 
 ---
 
